@@ -1,0 +1,13 @@
+def addition(c,s,a,b):
+    #print(c,s,a,b)
+    if c==0:
+        return s
+    else:
+        a=s
+        b=c<<1
+        return addition(a&b,a^b,a,b)
+    
+a,b=map(int,input().split())
+s=a^b
+c=a&b
+print(addition(c,s,a,b))
