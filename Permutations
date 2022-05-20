@@ -1,0 +1,25 @@
+#Permutations
+
+ans=[]
+def print_permutations(n,ar,ds,vis):
+    if n==len(ds):
+        ans.append(ds.copy())
+        return
+    for i in range(n):
+        if vis[i]==0:
+            vis[i]=1
+            ds.append(ar[i])
+            print_permutations(n,ar,ds,vis)
+            vis[i]=0
+            ds.pop()
+    
+    
+
+n=int(input())
+ar=[int(i) for i in input().split()]
+ds=[]
+vis=[0]*n
+print_permutations(n,ar,ds,vis)
+
+print(ans)
+
