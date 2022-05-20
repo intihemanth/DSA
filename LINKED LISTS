@@ -1,0 +1,33 @@
+#LINKED LISTS
+#colllection of nodes with links in between is called linked list.
+
+class Node:
+    def __init__(self,val):
+        self.data=val
+        self.next=None
+
+head=None
+def insert_end(val):
+    global head
+    nn=Node(val)
+    if head==None:
+        head=nn
+    else:
+        temp=head
+        while temp.next:
+            temp=temp.next
+        #print(temp.val)
+        temp.next=nn
+def display():
+    global head
+    temp=head
+    while temp:
+        print(temp.data)
+        temp=temp.next
+    
+            
+n=int(input())   #no of nodes
+for i in range(n):
+    val=int(input())
+    insert_end(val)
+display()
