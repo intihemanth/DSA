@@ -1,0 +1,22 @@
+#SIEVE TABLE
+def generate_sieve(n):
+    primes=[True]*n
+    primes[0],primes[1]=False,False
+    i=2
+    while i*i<=n:
+        if primes[i]:
+            for _ in range(i*i,n,i):
+                if primes[_]:
+                    primes[_]=False
+                    
+        i+=1
+    return primes
+
+
+
+n=int(input())
+l=generate_sieve(n)
+#print(li)
+for i in range(len(l)):
+    if l[i]:
+        print(i,end=" ")
