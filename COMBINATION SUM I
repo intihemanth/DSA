@@ -5,8 +5,6 @@
 #note: each element can be picked any no. of times
 
 
-'''
-
 def combine_sum(i,n,tar,ar,ds,m):
     if i==n:
         if tar==0:
