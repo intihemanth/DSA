@@ -1,0 +1,29 @@
+#COMBINATION SUM I
+# ex:  ar=[ 2 ,3,4,7]  target=7
+#           0  1 2 3
+#print all the valid combinations
+#note: each element can be picked any no. of times
+
+
+'''
+
+def combine_sum(i,n,tar,ar,ds,m):
+    if i==n:
+        if tar==0:
+            m.append(ds.copy())
+            print(ds)
+        return
+    if ar[i]<=tar:
+        ds.append(ar[i])
+        combine_sum(i,n,tar-ar[i],ar,ds,m)
+        ds.pop()
+    
+    combine_sum(i+1,n,tar,ar,ds,m)
+    
+
+n,tar=map(int,input().split())
+ar=[int(i) for i in input().split()]
+ds=[]
+m=[]
+combine_sum(0,n,tar,ar,ds,m)
+print(m)
