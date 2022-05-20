@@ -1,0 +1,13 @@
+#PREFIX SUM
+# HERE WE USE A PREFIX ARRAY TO  STORE THE SUM OF PREFIX ELEMENTS IN GIVEN ARRAY
+
+
+arr=[int(i) for i in input().split()]
+n=len(arr)
+pre=[0]*n
+pre[0]=arr[0]
+i=1
+while i<n:
+    pre[i]=pre[i-1]+arr[i]
+    i+=1
+print(pre)
