@@ -1,0 +1,20 @@
+#WRITE A CODE TO PRINT THE SUBSEQUENCE WHOSE SUM IS K.
+
+
+def subsequence(x,n,ds,ar):
+    if x==n:
+        print(ds,end=' ')
+        return 
+
+    #logic to pick a number
+    ds.append(ar[x])
+    subsequence(x+1,n,ds,ar)
+    ds.pop()
+
+    #logic to not to pick a number
+    subsequence(x+1,n,ds,ar)
+    
+n=int(input())
+ar=[int(i) for i in input().split()]
+ds=[]
+subsequence(0,n,ds,ar)
