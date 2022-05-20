@@ -1,0 +1,21 @@
+## 1 to N using recursion
+
+
+def fun1(i):
+    if i>10:
+        return
+    print(i,end=" ")
+    fun1(i+1)
+fun1(1)
+
+
+
+
+## 1 to N using backtracking
+
+def fun1(i):
+    if i<1:
+        return
+    fun1(i-1)
+    print(i,end=" ")
+fun1(10)
