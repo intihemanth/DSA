@@ -1,0 +1,26 @@
+#INTEGRATING SIEVE  WITH PREFIX
+
+
+def generate_sieve(n):
+    #p=10000001
+    primes=[1]*(n+1)
+    primes[0],primes[1]=0,0
+    i=2
+    while i*i<=n:
+        if primes[i]:
+            for _ in range(i*i,n+1,i):
+                primes[_]=0
+        i+=1
+    #print(primes)
+
+    pre=[0]*(10000001)
+    pre[0]=primes[0]
+    j=1
+    while j<(n+1):
+        if primes[j]==1:
+            pre[j]=pre[j-1]+1
+        j+=1
+    return pre[n]
+
+n=int(input())
+print(generate_sieve(n))
